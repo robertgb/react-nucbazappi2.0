@@ -7,7 +7,6 @@ import categoriesReducer from './categories/categories-reducer';
 import recommendedReducer from './recommended/recommended-reducer';
 import cartReducer from './cart/cart-reducer';
 import userReducer from './user/user-reducer';
-import ordersReducer from './orders/orders-reducer';
 
 //La whitelist define la parte del estado que queremos persistir
 
@@ -23,7 +22,6 @@ const rootReducer = combineReducers({
   recommended: recommendedReducer,
   cart: cartReducer,
   user: userReducer,
-  orders: ordersReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

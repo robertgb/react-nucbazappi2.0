@@ -1,4 +1,3 @@
-import { Timestamp } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { formatPrice, formatDate } from '../../utils';
 import OrderStatus from '../UI/OrderStatus/OrderStatus';
@@ -11,22 +10,15 @@ import {
   TitleStyled,
 } from './CardMisOrdenesStyles';
 
-const CardMisOrdenes = ({ createdAt, status, total, id }) => {
-  const navigate = useNavigate();
-
-  const createOrderAt = new Timestamp(
-    createdAt.seconds,
-    createdAt.nanoseconds
-  ).toDate();
-
+const CardMisOrdenes = () => {
   return (
-    <PedidoContainerStyled onClick={() => navigate(`/resumen/${id}`)}>
+    <PedidoContainerStyled onClick={e => e.preventDefault()}>
       <TextContainerStyled>
-        <TitleStyled>ID de la orden: #{id.slice(0, 7)}</TitleStyled>
-        <IdStyled>Fecha {formatDate(createOrderAt)}hs</IdStyled>
-        <PriceStyled>{formatPrice(total)}</PriceStyled>
+        <TitleStyled>ID de la orden: 0912</TitleStyled>
+        <IdStyled>Fecha {formatDate(new Date())}hs</IdStyled>
+        <PriceStyled>{formatPrice(3000)}</PriceStyled>
       </TextContainerStyled>
-      <OrderStatus status={status} />
+      <OrderStatus status='pending' />
     </PedidoContainerStyled>
   );
 };

@@ -8,19 +8,22 @@ import {
   PriceContainerStyled,
 } from './CardResumenStyles';
 
-const CardResumen = ({ title, desc, quantity, img, price }) => {
+const CardResumen = () => {
   return (
     <ProductStyled>
       <ProductLeftStyled>
-        <img src={img} alt={title} />
+        <img
+          src='https://res.cloudinary.com/dcatzxqqf/image/upload/v1656648456/coding/NucbaZappi/Productos/muzza-mentolada_fmh9at.png'
+          alt='La Aco'
+        />
         <div>
-          <h3>{title}</h3>
-          <p>{desc}</p>
+          <h3>La Aco</h3>
+          <p>Cheta la gorra</p>
         </div>
       </ProductLeftStyled>
       <PriceContainerStyled>
-        <p>{quantity}U</p>
-        <ProductPriceStyled>{formatPrice(price * quantity)}</ProductPriceStyled>
+        <p>3U</p>
+        <ProductPriceStyled>{formatPrice(3000 * 3)}</ProductPriceStyled>
       </PriceContainerStyled>
     </ProductStyled>
   );
