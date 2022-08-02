@@ -8,7 +8,6 @@ import Register from '../pages/Register/Register';
 import Checkout from '../pages/Checkout/Checkout';
 import MisOrdenes from '../pages/MisOrdenes/MisOrdenes';
 import PageNotFound from '../pages/PageNotFound/PageNotFound';
-import ProtectedRoute from '../components/ProtectedRoute/ProtectedRoute';
 import ForgotPassword from '../pages/ForgotPassword/ForgotPassword';
 
 function Routes() {
@@ -22,14 +21,7 @@ function Routes() {
       <Route path='/felicitaciones' element={<Felicitaciones />} />
       <Route path='/resumen/:orderId' element={<Resumen />} />
 
-      <Route
-        path='/checkout'
-        element={
-          <ProtectedRoute redirectTo='/register'>
-            <Checkout />
-          </ProtectedRoute>
-        }
-      />
+      <Route path='/checkout' element={<Checkout />} />
 
       <Route path='*' element={<PageNotFound />} />
     </ReactDomRoutes>

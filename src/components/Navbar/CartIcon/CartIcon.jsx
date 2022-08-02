@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as cartActions from '../../../redux/cart/cart-actions';
-import * as userActions from '../../../redux/user/user-actions';
 
 import { FaShoppingCart } from 'react-icons/fa';
 
@@ -13,16 +12,11 @@ const CartIcon = () => {
     0
   );
 
-  const hiddenMenu = useSelector(state => state.user.hiddenMenu);
-
   const dispatch = useDispatch();
 
   return (
     <LinkContainerStyled
-      onClick={() => {
-        dispatch(cartActions.toggleHiddenCart());
-        !hiddenMenu && dispatch(userActions.toggleMenuHidden());
-      }}
+      onClick={() => dispatch(cartActions.toggleHiddenCart())}
     >
       <FaShoppingCart />
       <span>{totalCartItems}</span>
