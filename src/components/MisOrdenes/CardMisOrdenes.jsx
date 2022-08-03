@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import { formatPrice, formatDate } from '../../utils';
 import OrderStatus from '../UI/OrderStatus/OrderStatus';
 

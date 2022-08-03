@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -19,11 +20,13 @@ import {
 } from './NavbarStyles';
 
 function Navbar() {
+  const [hiddenCart, setHiddenCart] = useState(true);
+
   const navigate = useNavigate();
 
   return (
     <NavbarContainerStyled>
-      <ModalCart />
+      <ModalCart hiddenCart={hiddenCart} setHiddenCart={setHiddenCart} />
       <ModalUser />
       <div>
         <Link to='/'>
@@ -44,7 +47,7 @@ function Navbar() {
         </motion.div>
 
         <CartNavStyled>
-          <CartIcon />
+          <CartIcon hiddenCart={hiddenCart} setHiddenCart={setHiddenCart} />
         </CartNavStyled>
 
         <UserNavStyled>

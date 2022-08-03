@@ -1,27 +1,17 @@
 import React from 'react';
-import {
-  checkoutInitialValues,
-  checkoutValidationSchema,
-} from '../../../formik';
 
 import Input from '../../UI/Input/Input';
 import Submit from '../../UI/Submit/Submit';
-import Loader from '../../UI/Loader/Loader';
 
 import { CheckoutDatosStyled, Formik, Form } from './CheckoutFormStyles';
 
-const CheckoutForm = ({ cartItems }) => {
+const CheckoutForm = () => {
   return (
     <CheckoutDatosStyled>
       <h2>Ingresá tus datos</h2>
-      <Formik
-        initialValues={checkoutInitialValues}
-        validationSchema={checkoutValidationSchema}
-        onSubmit={values => console.log(values)}
-      >
+      <Formik>
         <Form>
           <Input
-            name='name'
             htmlFor='nombre'
             type='text'
             id='nombre'
@@ -30,7 +20,6 @@ const CheckoutForm = ({ cartItems }) => {
             Nombre
           </Input>
           <Input
-            name='cellphone'
             htmlFor='celular'
             type='text'
             id='celular'
@@ -39,7 +28,6 @@ const CheckoutForm = ({ cartItems }) => {
             Celular
           </Input>
           <Input
-            name='location'
             htmlFor='localidad'
             type='text'
             id='localidad'
@@ -48,7 +36,6 @@ const CheckoutForm = ({ cartItems }) => {
             Localidad
           </Input>
           <Input
-            name='address'
             htmlFor='direccion'
             type='text'
             id='dirección'
@@ -57,7 +44,7 @@ const CheckoutForm = ({ cartItems }) => {
             Dirección
           </Input>
           <div>
-            <Submit disabled={!cartItems.length}>Iniciar Pedido</Submit>
+            <Submit disabled='true'>Iniciar Pedido</Submit>
           </div>
         </Form>
       </Formik>
