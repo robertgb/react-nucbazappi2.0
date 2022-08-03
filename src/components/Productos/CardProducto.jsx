@@ -9,14 +9,17 @@ import {
   ProductosCard,
 } from './CardsProductosStyles';
 
-const CardProducto = ({ img, title, desc, price, id }) => {
+const CardProducto = () => {
   return (
     <ProductosCard>
-      <img src={img} alt={title} />
-      <h2>{title}</h2>
-      <p>{desc}</p>
+      <img
+        src='https://res.cloudinary.com/dcatzxqqf/image/upload/v1656648456/coding/NucbaZappi/Productos/muzza-mentolada_fmh9at.png'
+        alt='La Aco'
+      />
+      <h2>La Aco</h2>
+      <p>Cheta la gorra</p>
       <ContainerPrice>
-        <CardPrice>{formatPrice(price)}</CardPrice>
+        <CardPrice>{formatPrice(3000)}</CardPrice>
         <Button onClick={e => e.preventDefault()}>Agregar</Button>
       </ContainerPrice>
     </ProductosCard>

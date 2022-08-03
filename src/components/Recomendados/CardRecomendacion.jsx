@@ -12,14 +12,17 @@ import {
   InfoCard,
 } from './CardsRecomendacionStyled';
 
-const CardRecomendacion = ({ title, img, price, desc, id }) => {
+const CardRecomendacion = () => {
   return (
     <Card>
-      <CardImg src={img} alt={title} />
+      <CardImg
+        src='https://res.cloudinary.com/dcatzxqqf/image/upload/v1656648456/coding/NucbaZappi/Productos/muzza-mentolada_fmh9at.png'
+        alt='La Aco'
+      />
       <CardText>
-        <CardTitle>{title}</CardTitle>
-        <InfoCard>{desc}</InfoCard>
-        <CardPrice>{formatPrice(price)}</CardPrice>
+        <CardTitle>La Aco</CardTitle>
+        <InfoCard>Cheta la gorra</InfoCard>
+        <CardPrice>{formatPrice(3000)}</CardPrice>
       </CardText>
       <Button onClick={e => e.preventDefault()}>Agregar</Button>
     </Card>

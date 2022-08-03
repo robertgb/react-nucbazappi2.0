@@ -1,4 +1,3 @@
-import { Products } from '../../data';
 import CardProducto from './CardProducto';
 import Button from '../UI/Button/Button';
 
@@ -9,9 +8,14 @@ const CardsProductos = () => {
   return (
     <>
       <ProductosContainer>
-        {Object.entries(Products).map(([, foods]) =>
-          foods.map(food => <CardProducto key={food.id} {...food} />)
-        )}
+        <CardProducto />
+        <CardProducto />
+        <CardProducto />
+        <CardProducto />
+        <CardProducto />
+        <CardProducto />
+        <CardProducto />
+        <CardProducto />
       </ProductosContainer>
 
       <ButtonContainerStyled>
