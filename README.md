@@ -7,7 +7,10 @@ Luego de mostrar el slide de la clase, se debe iniciar con estos cambios para ex
 
 ## Siguientes pasos
 
-Una vez explicada la estructura base, nos movemos a la primer rama para comenzar el desarrollo:
+Una vez explicada la estructura base, comenzamos a desarrollar lo que se encuentra en la siguiente rama.
+
+Para eso, debemos movernos con anterioridad y tener en el otro proyecto (que no se muestra en pantalla) la rama starter:
+
 ```bash
   git checkout starter
 ```
