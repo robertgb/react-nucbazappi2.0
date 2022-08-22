@@ -1,4 +1,4 @@
-## Clase 1 - Starter Hardcodeado 🍕
+## Clase 1 - Starter  🍕
 
 En este rama se encuentran los archivos que corresponde a la versión hardcodeada inicial del proyecto.
 Luego de mostrar el slide de la clase, se debe iniciar con estos cambios para explicar la estructura básica del proyecto, los archivos escritos, los estilos relevantes y lo necesario para comenzar el desarrollo dinámico (en la misma clase).
@@ -9,9 +9,9 @@ Luego de mostrar el slide de la clase, se debe iniciar con estos cambios para ex
 
 Una vez explicada la estructura base, comenzamos a desarrollar lo que se encuentra en la siguiente rama.
 
-Para eso, debemos movernos con anterioridad y tener en el otro proyecto (que no se muestra en pantalla) la rama starter:
+Para eso, debemos movernos con anterioridad y tener en el otro proyecto (que no se muestra en pantalla) la rama feature/dynamic-data:
 
 ```bash
-  git checkout starter
+  git checkout feature/dynamic-data
 ```
-* https://github.com/Nucba-React/Nucba-Zappi/tree/starter
+* https://github.com/Nucba-React/Nucba-Zappi/tree/feature/dynamic-data
