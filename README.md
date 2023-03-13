@@ -16,4 +16,4 @@ Para eso, debemos movernos con anterioridad y tener en el otro proyecto (que no 
 
 ```
 
-- https://github.com/Nucba-React/Nucba-Zappi/tree/feature/dynamic-data
+- https://github.com/Nucba-React/nucbaZappi2.0/tree/feature/dynamic-data
