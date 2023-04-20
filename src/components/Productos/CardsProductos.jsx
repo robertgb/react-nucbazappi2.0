@@ -3,19 +3,19 @@ import Button from '../UI/Button/Button';
 
 import { ProductosContainer } from './CardsProductosStyles';
 import { ButtonContainerStyled } from '../../pages/Home/HomeStyles';
+import { products } from '../../data/Products';
 
 const CardsProductos = () => {
   return (
     <>
       <ProductosContainer>
-        <CardProducto />
-        <CardProducto />
-        <CardProducto />
-        <CardProducto />
-        <CardProducto />
-        <CardProducto />
-        <CardProducto />
-        <CardProducto />
+        {
+          products.map(product => (
+            <CardProducto 
+              key={product.id} 
+              {...product} />
+          ))
+        }
       </ProductosContainer>
 
       <ButtonContainerStyled>
