@@ -3,19 +3,23 @@ import Button from '../UI/Button/Button';
 
 import { ProductosContainer } from './CardsProductosStyles';
 import { ButtonContainerStyled } from '../../pages/Home/HomeStyles';
-import { products } from '../../data/Products';
+import { useSelector } from 'react-redux';
 
 const CardsProductos = () => {
+  const products = useSelector(state => state.products.products)
   return (
     <>
       <ProductosContainer>
-        {
-          products.map(product => (
-            <CardProducto 
-              key={product.id} 
-              {...product} />
-          ))
-        }
+          {
+            Object.entries(products).map(([_categery, foods]) => 
+              foods.map(product =>
+                <CardProducto 
+                  key={product.id} 
+                  {...product} />
+                )
+            )
+          }
+
       </ProductosContainer>
 
       <ButtonContainerStyled>
