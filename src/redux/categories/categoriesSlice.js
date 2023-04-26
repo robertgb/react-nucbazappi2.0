@@ -3,6 +3,7 @@ import { Categories } from '../../data/Categories';
 
 const initialState = {
   categories: Categories,
+  selectedCategory: null
 };
 
 export const categoriesSlice = createSlice({
@@ -10,9 +11,15 @@ export const categoriesSlice = createSlice({
   initialState,
   reducers: {
     getCategories: state => state,
+    selectCategory: (state, action) => {
+      return {
+        ...state,
+        selectedCategory: action.payload !== state.selectedCategory ? action.payload : null
+      }
+    }
   },
 });
 
-export const { getCategories } = categoriesSlice.actions;
+export const { getCategories, selectCategory } = categoriesSlice.actions;
 
 export default categoriesSlice.reducer;
