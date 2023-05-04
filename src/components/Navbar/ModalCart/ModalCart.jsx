@@ -25,15 +25,28 @@ import {
   TotalStyled,
 } from './ModalCartStyles';
 import { ModalOverlayStyled } from '../NavbarStyles';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleHiddenCart } from '../../../redux/cart/cartSlice';
 
-const ModalCart = ({ hiddenCart, setHiddenCart }) => {
+const ModalCart = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const {
+    cartItems,
+    shippingCost,
+    hidden: hiddenCart,
+  } = useSelector(state => state.cart);
+
+  const totalPrice = cartItems.reduce(
+    (acc, item) => (acc += item.price * item.quantity),
+    0
+  );
 
   return (
     <>
       {!hiddenCart && (
         <ModalOverlayStyled
-          onClick={() => setHiddenCart(!hiddenCart)}
+          onClick={() => dispatch(toggleHiddenCart())}
           isHidden={hiddenCart}
         />
       )}
@@ -50,7 +63,7 @@ const ModalCart = ({ hiddenCart, setHiddenCart }) => {
               <CloseButtonStyled
                 className='close__modal '
                 whileTap={{ scale: 0.95 }}
-                onClick={() => setHiddenCart(!hiddenCart)}
+                onClick={() => dispatch(toggleHiddenCart())}
               >
                 <MdOutlineClose size='24px' />
               </CloseButtonStyled>
@@ -69,23 +82,31 @@ const ModalCart = ({ hiddenCart, setHiddenCart }) => {
               </TitleStyled>
 
               <ProductsWrapperStyled>
-                <ModalCartCard />
+                {cartItems.length ? (
+                  cartItems.map(item => (
+                    <ModalCartCard key={item.id} {...item} />
+                  ))
+                ) : (
+                  <p>No hay productos todavía</p>
+                )}
               </ProductsWrapperStyled>
             </MainContainerStyled>
 
             <PriceContainerStyled>
               <SubtotalStyled>
                 <p>Subtotal:</p>
-                <span>{formatPrice(9000)}</span>
+                <span>{formatPrice(totalPrice)}</span>
               </SubtotalStyled>
               <EnvioStyled>
                 <p>Envio</p>
-                <span>{formatPrice(500)}</span>
+                <span>{formatPrice(shippingCost)}</span>
               </EnvioStyled>
               <hr />
               <TotalStyled>
                 <p>Total:</p>
-                <PriceStyled>{formatPrice(9000 + 500)}</PriceStyled>
+                <PriceStyled>
+                  {formatPrice(totalPrice + shippingCost)}
+                </PriceStyled>
               </TotalStyled>
               <ButtonContainerStyled>
                 <Submit onClick={() => navigate('/checkout')}>
