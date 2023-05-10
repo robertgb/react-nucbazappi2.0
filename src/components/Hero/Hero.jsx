@@ -18,7 +18,6 @@ const Hero = ({ doScroll }) => {
   const listOfCategories = useSelector(
       state => state.categories.categories
     ).map(category => category.category)
-  console.log({ listOfCategories })
 
   const dispatch = useDispatch()
 
@@ -36,7 +35,6 @@ const Hero = ({ doScroll }) => {
     } else {
       return alert('Categoria no encontrada')
     }
-    //setValue('')
   }
 
   return (
